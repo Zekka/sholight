@@ -1,0 +1,22 @@
+@import "variables";
+// General colors
+@syntax-text-color: @base-text;
+@syntax-cursor-color: @base-cursor;
+@syntax-selection-color: lighten(@base-cursor, 1%);
+@syntax-selection-flash-color: @base-cursor;
+@syntax-background-color: @base-bg;
+
+// Guide colors
+@syntax-wrap-guide-color: @base-text;
+@syntax-indent-guide-color: fadeout(@base-text, 90%);
+@syntax-invisible-character-color: fadeout(@base-text, 90%);
+
+// For find and replace markers
+@syntax-result-marker-color: #ff0000;
+@syntax-result-marker-color-selected: #00ff00;
+
+// Gutter colors
+@syntax-gutter-text-color: fadeout(@base-text, 70%);
+@syntax-gutter-text-color-selected: @aqua-green;
+@syntax-gutter-background-color: @base-bg;
+@syntax-gutter-background-color-selected: @base-bg;

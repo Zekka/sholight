@@ -1,0 +1,46 @@
+@teal: #30a6ba;
+@tan: #8e6d57;
+@navy-blue: #154b54;
+@aqua-green: hsv(90, 0.8, 0.4);
+@acrid-green: #96aa20;
+@flesh-pink: #cf4c59;
+@blue-violet: #5b2c87;
+@dismal-red: #800000;
+
+@role-defined: darken(@teal, 0.7); // a step below builtin
+@role-defined-2: @acrid-green;
+
+@base-text: #000000;
+@base-cursor: fadeout(@acrid-green, 70%);
+@base-bg: #ffffff;
+
+// editor
+.feature-fold-marker { color: @tan; }
+
+// comments
+.feature-comment { color: @tan; }
+
+// declarations and keywords
+.feature-declaration-keyword { color: @aqua-green; font-weight: bold; }
+.feature-keyword { color: @aqua-green; }
+.feature-special-method { color: @teal; }
+
+// operators
+.feature-punctuation { color: @navy-blue; }
+.feature-bracket-matcher { border: 1px 1px 1px 1px @navy-blue solid; }
+
+// errors
+.feature-deprecated { color: @dismal-red; font-style: strikethrough; }
+.feature-illegal { color: @dismal-red; }
+
+// literals and variables
+.feature-storage-type { color: @role-defined; }
+.feature-entity { color: @role-defined-2; }
+.feature-constant-like { color: @flesh-pink; }
+.feature-method-like { color: @role-defined; }
+.feature-field-like { color: @role-defined-2; }
+.feature-parameter { color: fadeout(@base-text, 30%); } // TODO: differentiate from variables?
+.feature-unit { color: fadeout(@base-text, 70%); }
+.feature-escape { color: lighten(@blue-violet, 30%); }
+.feature-quoted { color: @blue-violet; }
+.feature-variable { color: fadeout(@base-text, 30%); }

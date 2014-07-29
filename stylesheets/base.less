@@ -1,0 +1,113 @@
+@import "variables";
+@import "syntax-variables";
+
+// editor
+.editor-colors {
+  background-color: @base-bg;
+  color: @base-text;
+}
+
+.editor {
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+  }
+
+  .gutter .line-number {
+    opacity: 1;
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    .feature-fold-marker;
+  }
+
+  .cursor {
+    border-color: @syntax-cursor-color;
+    background-color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .line-number.cursor-line-no-selection {
+    background-color: @syntax-gutter-background-color-selected;
+    color: @syntax-gutter-text-color-selected;
+  }
+}
+
+// comments
+.comment { .feature-comment; }
+
+// declarations and keywords
+.declaration { .keyword { .feature-declaration-keyword; } }
+.keyword {
+  .feature-keyword;
+
+  &.other {
+    &.special-method { .feature-special-method; }
+  }
+
+// operators
+  &.operator,
+  &.double-colon, &.arrow { // haskell
+    .feature-punctuation;
+  }
+}
+.delimiter, .brace { .feature-punctuation; }
+.punctuation
+  :not(.comment)
+  :not(.leading-whitespace)
+  :not(.indent-guide)
+  :not(.whitespace) {
+  .feature-punctuation;
+}
+.bracket-matcher {
+  .feature-bracket-matcher;
+}
+
+// errors
+.invalid.deprecated { .feature-deprecated; }
+.invalid.illegal { .feature-illegal; }
+
+// literals and variables
+.storage.type { .feature-storage-type; }
+.entity { .feature-entity; }
+.constant { .feature-constant-like; }
+.method .name { .feature-method-like; }
+.property-name { .feature-field-like; }
+.parameter { .feature-parameter; }
+.unit { .feature-unit; }
+
+.string {
+  .feature-quoted;
+
+  .constant.character.escape { .feature-escape; }
+
+  &.regexp {
+    .feature-quoted;
+
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repetition {
+      // TODO: Reasonable? This mirrors default Solarized cfg
+      .feature-illegal;
+    }
+  }
+}
+
+.variable {
+  .feature-variable;
+
+  &.instance { .feature-field-like; }
+  &.constant { .feature-constant-like; }
+}
