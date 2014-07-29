@@ -1,7 +1,7 @@
 {
   "name": "sholight",
   "theme": "syntax",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A floaty yet professional-looking light theme based on the look and feel of the Sho documentation.",
   "repository": "https://github.com/zekka/sholight",
   "license": "MIT",
