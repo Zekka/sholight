@@ -2,12 +2,12 @@
 @import "syntax-variables";
 
 // editor
-.editor-colors {
+atom-text-editor {
   background-color: @base-bg;
   color: @base-text;
 }
 
-.editor {
+atom-text-editor {
   .invisible-character {
     color: @syntax-invisible-character-color;
   }
@@ -72,7 +72,7 @@
   :not(.whitespace) {
   .feature-punctuation;
 }
-.bracket-matcher {
+.bracket-matcher.region {
   .feature-bracket-matcher;
 }
 

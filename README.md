@@ -4,6 +4,8 @@ This is a very light, highly saturated theme based on the four-color palette use
 
 Use a large font size and your formatting will look presentation-ready.
 
+Whoa! Lot of deprecations. I've just fixed it for Atom 1.0. Look is basically the same.
+
 ## Samples ##
 
 ### Haskell ###
